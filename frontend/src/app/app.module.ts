@@ -13,13 +13,19 @@ import { SidenavComponent } from './mainpage/sidenav/sidenav.component'
 import {MatToolbarModule} from '@angular/material/toolbar'
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list'
-import {MatSidenavModule} from '@angular/material/sidenav'
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { ProjectcComponent } from './components/projectc/projectc.component';
+import { HomeComponent } from './mainpage/home/home.component'
+import {MatCardModule} from '@angular/material/card'
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SidenavComponent
+    SidenavComponent,
+    ProjectcComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +34,8 @@ import {MatSidenavModule} from '@angular/material/sidenav'
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
