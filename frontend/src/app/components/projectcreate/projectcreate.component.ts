@@ -21,7 +21,7 @@ export class ProjectcreateComponent implements OnInit {
     end_date:'',
     value: null!,
     risk: '',
-    roi:0,
+    roi:null!,
     members:[] 
   }
   constructor(private projectServive: ProjectService, private router: Router) { }
@@ -31,18 +31,28 @@ export class ProjectcreateComponent implements OnInit {
   }
 
   navigate(): void{
-    this.projectServive.create(this.project).subscribe(()=>{
       this.router.navigate(['/projects'])
-    })
-  }
-
-  calcRoi():void{
-    console.log(this.project.risk)
-    
     }
 
+  calcRoi(): void{
+    switch(this.project.risk){
+        case 'baixo':
+            this.project.roi=this.project.value*0.05;
+          break;
+             
+        case 'médio':
+            this.project.roi=this.project.value*0.1;
+          break;
+        
+        case 'alto':
+            this.project.roi=this.project.value*0.2;    
+    }  
+  }
+
   create():void{
-    this.projectServive.create(this.project).subscribe()
+    this.projectServive.create(this.project).subscribe(()=>{
+      this.projectServive.showMessage('projeto criado com sucesso!')
+    })
 
   }    
 

@@ -24,6 +24,7 @@ import {MatFormFieldModule} from '@angular/material/form-field'
 import { FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio'
+import{MatSnackBarModule} from '@angular/material/snack-bar'
 
 
 
@@ -52,6 +53,7 @@ import {MatRadioModule} from '@angular/material/radio'
     MatInputModule,
     FormsModule,
     MatRadioModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

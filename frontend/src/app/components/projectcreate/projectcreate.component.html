@@ -19,7 +19,7 @@
             [(ngModel)]="project.end_date" name="end-date">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="valor R$" 
+            <input matInput placeholder="Investimento R$" 
             [(ngModel)]="project.value" name="valor">
         </mat-form-field>
         
@@ -31,10 +31,12 @@
             <mat-radio-button *ngFor="let value of listRisk" [value]="value">{{value}}</mat-radio-button>
             </mat-radio-group>
     </div>
+    <span>ROI:</span>
+    <span [(ngModel)]="project.roi">{{project.roi}}</span>
 
     <mat-card-actions class="button-group">
         <button (click)="create()" >Salvar</button>
         <button (click)="navigate()">Cancelar</button>
-        <button (click)="calcRoi()">Simular</button>
+        <button (click)="calcRoi()">Simular ROI</button>
     </mat-card-actions>
 </mat-card>    
