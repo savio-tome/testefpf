@@ -1,0 +1,8 @@
+.maincard{
+    height: 400px;
+    width: 300px;
+    border-width: 2px;
+    border-style: solid;
+    margin-left: 100px;
+    margin-top: 50px;
+}
