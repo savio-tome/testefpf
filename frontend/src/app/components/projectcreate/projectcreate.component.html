@@ -26,17 +26,15 @@
     </form>
     
     <div>
-        <label>RISCO</label>
-        <mat-radio-group>
-            <mat-radio-button>Baixo</mat-radio-button>
-            <mat-radio-button>Médio</mat-radio-button>
-            <mat-radio-button>Alto</mat-radio-button>
-        </mat-radio-group>
+        <label>RISCO:</label>
+        <mat-radio-group [(ngModel)]="project.risk">
+            <mat-radio-button *ngFor="let value of listRisk" [value]="value">{{value}}</mat-radio-button>
+            </mat-radio-group>
     </div>
-    
+
     <mat-card-actions class="button-group">
-        <button >Salvar</button>
-        <button >Cancelar</button>
-        <button >Simular</button>
+        <button (click)="create()" >Salvar</button>
+        <button (click)="navigate()">Cancelar</button>
+        <button (click)="calcRoi()">Simular</button>
     </mat-card-actions>
 </mat-card>    

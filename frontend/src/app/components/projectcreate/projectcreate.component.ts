@@ -3,6 +3,7 @@ import { ProjectService } from './../projectc/project.service';
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../projectc/project.model';
 
+
 @Component({
   selector: 'app-projectcreate',
   templateUrl: './projectcreate.component.html',
@@ -10,13 +11,16 @@ import { Project } from '../projectc/project.model';
 })
 export class ProjectcreateComponent implements OnInit {
 
+  valueRisk!: string ;
+  listRisk: string[]=['baixo','médio','alto'];
+
   project: Project = {
     name:'',
     logo:'',
     start_date:'',
     end_date:'',
     value: null!,
-    risk: 0,
+    risk: '',
     roi:0,
     members:[] 
   }
@@ -31,5 +35,15 @@ export class ProjectcreateComponent implements OnInit {
       this.router.navigate(['/projects'])
     })
   }
+
+  calcRoi():void{
+    console.log(this.project.risk)
+    
+    }
+
+  create():void{
+    this.projectServive.create(this.project).subscribe()
+
+  }    
 
 }

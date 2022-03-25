@@ -5,7 +5,7 @@ export  interface Project{
     start_date: string,
     end_date: string,
     value: number,
-    risk: number,
+    risk: string,
     roi:number,
     members:string[] 
 }
