@@ -1,3 +1,4 @@
+import { SimulationComponent } from './components/simulation/simulation.component';
 import { ProjectcreateComponent } from './components/projectcreate/projectcreate.component';
 
 import { HomeComponent } from './mainpage/home/home.component';
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path:"project/create",
     component:ProjectcreateComponent
+  },
+  {
+    path:"project/simulation",
+    component:SimulationComponent
   }
  
 ];

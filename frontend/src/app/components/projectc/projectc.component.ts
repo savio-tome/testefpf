@@ -10,7 +10,8 @@ import { Project } from './project.model';
   styleUrls: ['./projectc.component.css']
 })
 export class ProjectcComponent implements OnInit {
-  
+
+  projs: string='test'
   projects: Project[]=[]
 
   constructor(private router: Router, private projectService: ProjectService) { }
@@ -21,8 +22,11 @@ export class ProjectcComponent implements OnInit {
       console.log(this.projects)
     })
   }
-  
-  navigate(){
-    this.router.navigate(['project/create'])
+  editproject():void{
+    console.log(this.projs)
+  }
+
+  navigate(route: string){
+    this.router.navigate([route])
   }
 }
