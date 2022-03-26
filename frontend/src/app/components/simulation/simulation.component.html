@@ -1,0 +1,17 @@
+<mat-card class="maincard">
+    <mat-card-title>Simular ROI</mat-card-title>
+    <mat-form-field>
+        <input  [(ngModel)]="value" matInput placeholder="valor do investimento R$">
+    </mat-form-field>
+    <div>
+        <label>RISCO:</label>
+        <mat-radio-group [(ngModel)]="risk">
+            <mat-radio-button value=0>Baixo</mat-radio-button>
+            <mat-radio-button value=1>Médio</mat-radio-button>
+            <mat-radio-button value=2>Alto</mat-radio-button>
+        </mat-radio-group>
+        <button class="butt" (click)="calcRoi()">Calcular ROI</button>
+    </div>
+    <label class="label">O valor do Roi é: </label>
+    <span>{{roi}}</span>
+</mat-card>

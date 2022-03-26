@@ -1,0 +1,17 @@
+<mat-card class="maincard">
+    <mat-card-title>Projetos</mat-card-title>
+    <mat-selection-list #projs class="list" [multiple]="false">
+    
+            <mat-list-option *ngFor="let project of projects" [value]="project.name">
+                {{project.name}}
+        
+            </mat-list-option>
+        
+    </mat-selection-list>
+    <p>projectselected: {{projs.selectedOptions.selected[0]?.value}}</p>
+    <mat-card-actions class="button-group">
+        <button (click)="navigate('/project/create')">Novo</button>
+        <button (click)="editproject()">Editar</button>
+        <button (click)="navigate('/project/simulation')">Simular</button>
+    </mat-card-actions>
+</mat-card>    

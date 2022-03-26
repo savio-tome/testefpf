@@ -1,0 +1,42 @@
+<mat-card class="maincard">
+    <mat-card-title>Novo projeto</mat-card-title>
+
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" 
+            [(ngModel)]="project.name" name="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="imagem" 
+            [(ngModel)]="project.logo" name="logo">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="date" placeholder="data início" 
+            [(ngModel)]="project.start_date" name="start-date">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="date" placeholder="data fim" 
+            [(ngModel)]="project.end_date" name="end-date">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Investimento R$" 
+            [(ngModel)]="project.value" name="valor">
+        </mat-form-field>
+        
+    </form>
+    
+    <div>
+        <label>RISCO:</label>
+        <mat-radio-group [(ngModel)]="project.risk">
+            <mat-radio-button *ngFor="let value of listRisk" [value]="value">{{value}}</mat-radio-button>
+            </mat-radio-group>
+    </div>
+    <span>ROI:</span>
+    <span [(ngModel)]="project.roi">{{project.roi}}</span>
+
+    <mat-card-actions class="button-group">
+        <button (click)="create()" >Salvar</button>
+        <button (click)="navigate()">Cancelar</button>
+        <button (click)="calcRoi()">Simular ROI</button>
+    </mat-card-actions>
+</mat-card>    
